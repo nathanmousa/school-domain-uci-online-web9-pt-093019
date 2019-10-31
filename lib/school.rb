@@ -18,7 +18,7 @@ class School
   end
   
   def sort 
-    @roster.each do |x, y| 
+    roster.each do |x, y| 
       sorted[x] = y.sort 
     end 
   end
