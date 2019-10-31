@@ -13,16 +13,13 @@ class School
   end
   
   def grade(grade)
-    binding.pry
+
     self.roster[grade]
   end
   
   def sort 
-    sorted = {}
-  
-    @roster.each do |x, y| 
+    @roster.map do |x, y| 
       sorted[x] = y.sort 
     end 
-    sorted
   end
 end
