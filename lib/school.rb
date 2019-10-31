@@ -1,22 +1,20 @@
+require 'pry'
 class School
+  attr_reader :name, :roster
+  
   def initialize(name)
     @name = name
     @roster = {}
   end
   
-  attr_reader :name, :roster
-  
   def add_student(student, grade)
-    @roster[grade] = [] if roster[grade] == nil
+    @roster[grade] ||= []
     @roster[grade] << student
   end
   
   def grade(grade)
-    @roster.detect do |x, y| 
-      if x == grade
-        return y
-      end 
-    end
+    binding.pry
+    self.roster[grade]
   end
   
   def sort 
